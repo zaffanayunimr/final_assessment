@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: index.php');
         exit;
     }
-    $error = 'Nama pengguna atau kata laluan tidak tepat.';
+    $error = 'The username or password is incorrect.';
 }
 ?>
 <!DOCTYPE html>
@@ -46,17 +46,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
     <main class="login-card">
         <div class="brand" aria-hidden="true">S</div>
-        <h1>Selamat kembali</h1>
-        <p class="subtitle">Log masuk untuk menguruskan rekod pelajar.</p>
+        <h1>Welcome!</h1>
+        <p class="subtitle">Log in to manage student records.</p>
         <?php if ($error !== ''): ?><p class="error" role="alert"><?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?></p><?php endif; ?>
         <form method="post" action="login.php">
-            <label for="username">Nama pengguna</label>
+            <label for="username">Username</label>
             <input id="username" name="username" type="text" autocomplete="username" required autofocus>
-            <label for="password">Kata laluan</label>
+            <label for="password">Password</label>
             <input id="password" name="password" type="password" autocomplete="current-password" required>
-            <button type="submit">Log Masuk</button>
+            <button type="submit">Log in</button>
         </form>
-        <p class="hint">Nama pengguna dan kata laluan boleh diisi dengan apa-apa nilai.</p>
+        <p class="hint">The username and password can be filled in with any value.</p>
     </main>
 </body>
 </html>
